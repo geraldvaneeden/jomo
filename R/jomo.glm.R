@@ -11,7 +11,7 @@ jomo.glm <-
     }
     if (family=="binomial") {
       stopifnot(is.data.frame(data))
-      stopifnot(grepl("~",deparse(formula)))
+      stopifnot(grepl("~",deparse(formula, width.cutoff = 500L)))
       fit.cr<-glm(formula,data=data, family=binomial, na.action = na.omit)
       betaY.start<-coef(fit.cr)
       varY.start<-1
